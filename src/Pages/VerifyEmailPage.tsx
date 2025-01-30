@@ -12,7 +12,7 @@ const VerifyEmailPage = () => {
 
         if (token) {
             // Anfrage an die Backend-API senden
-            axios.post("http://localhost:3443/api/user/verify-email", { token })
+           axios.post(`${process.env.REACT_APP_REST_API_URL}user/verify-email`, { token })
                 .then(response => {
                     alert("E-Mail erfolgreich bestätigt!");
                     navigate("/login"); // Weiterleitung zur Login-Seite
